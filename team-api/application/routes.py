@@ -1,7 +1,7 @@
 from application import app
 from flask import request, jsonify
 
-teams = dict(Noble='West Ham', White='Arsenal', Rashford='Man U', Mane='Liverpool', Chillwell='Chelsea')
+teams = dict(Noble='West Ham', Antonio='West Ham', Zouma='West Ham', Pepe='Arsenal', White='Arsenal', Xhaka='Arsenal', Rashford='Man U', Maguire='Man U', Pogba='Man U', Gomez='Liverpool', Thiago='Liverpool', Mane='Liverpool', Chillwell='Chelsea', Kante='Chelsea', Werner='Chelsea')
 
 @app.route('/team', methods=['POST'])
 def noise():
