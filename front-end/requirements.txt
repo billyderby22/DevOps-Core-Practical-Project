@@ -5,3 +5,4 @@ Jinja2==3.0.3
 requests
 flask_sqlalchemy
 pymysql
+werkzeug==2.0.3
