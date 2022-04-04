@@ -5,4 +5,4 @@ class Results(db.Model):
     player = db.Column(db.String(100))
     team = db.Column(db.String(100))
     def __str__(self):
-        return f"{self.player} plasy for {self.team}"
+        return f"{self.player} plays for {self.team}"
