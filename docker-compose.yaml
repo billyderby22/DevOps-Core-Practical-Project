@@ -1,14 +1,28 @@
 version: "3.8"
 services:
+  mysql:
+    image: billyderby22/player-gen-db:latest
+    build: ./db
+    volumes:
+      - type: volume 
+        source: player-vol
+        target: /var/lib/mysql
+    networks:
+      - "football-net"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: player_gen
   front-end:
     image: billyderby22/player-gen-front:latest
     build: ./front-end
-    ports:
-      - published: 80
-        target: 5000
-        protocol: tcp
     networks:
       - "football-net"
+    depends_on:
+      - "mysql"
+      - "player-api"
+      - "team-api"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
   player-api:
     image: billyderby22/player-gen-player:latest
     build: ./player-api
@@ -19,5 +33,21 @@ services:
     build: ./team-api
     networks:
       - "football-net"
+  nginx:
+    image: nginx:latest
+    ports:
+      - published: 80
+        target: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: ./nginx.conf
+        target: /etc/nginx/nginx.conf
+    networks:
+      - "football-net"
+    depends_on:
+      - "front-end"
+volumes:
+  player-vol:  
 networks:
   football-net:
