@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  front-end:
+    image: billyderby22/player-gen-front:latest
+    build: ./front-end
+    ports:
+      - published: 80
+        target: 5000
+        protocol: tcp
+    networks:
+      - "football-net"
+  player-api:
+    image: billyderby22/player-gen-player:latest
+    build: ./player-api
+    networks:
+      - "football-net"
+  team-api:
+    image: billyderby22/player-gen-team:latest
+    build: ./team-api
+    networks:
+      - "football-net"
+networks:
+  football-net:
