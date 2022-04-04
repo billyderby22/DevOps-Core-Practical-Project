@@ -2,7 +2,7 @@ from application import app
 from flask import jsonify
 from random import choice
 
-players = ['Mark Noble', 'Ben White', 'Marcus Rashford', 'Sadio Mane', 'Ben Chillwell']
+players = ['Noble', 'White', 'Rashford', 'Mane', 'Chillwell']
 
 @app.route('/get-player', methods=['GET'])
 def get_player():
