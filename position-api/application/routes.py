@@ -16,12 +16,12 @@ def position():
         else: 
             position='invalid'
     elif team == "Arsenal":
-        if player == 'white':
+        if player == 'White':
             position = 'Defender'
         elif player == 'Pepe':
             position = 'Forward'
         elif player == 'Xhaka':
-            position = 'midfielder'
+            position = 'Midfielder'
         else: 
             position='invalid'
     elif team == "Man U":
