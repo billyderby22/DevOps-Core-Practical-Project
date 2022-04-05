@@ -2,7 +2,7 @@ from flask import Flask, Response, request, jsonify
 from application import app
 
 @app.route('/position', methods=["POST"])
-def name():
+def position():
     team=request.get_json()['team']
     player=request.get_json()['player']
 

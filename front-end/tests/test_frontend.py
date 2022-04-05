@@ -26,7 +26,7 @@ class TestView(TestBase):
     def test_get_frontend(self):
         with requests_mock.Mocker() as m:
             m.get('http://player-api:5000/get-player', json={"player":"Mane"})
-            m.get('http://team-api:5000/get-team', json={"team":"Liverpool"})
+            m.get('http://team-api:5000/team', json={"team":"Liverpool"})
             m.post('http://position-api:5000/position', json={"position":"Forward"})
             response = self.client.get(url_for('index'))
             self.assert200(response)

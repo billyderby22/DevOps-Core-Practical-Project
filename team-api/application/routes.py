@@ -5,6 +5,6 @@ from random import choice
 teams = ('West Ham', 'Arsenal', 'Man U', 'Liverpool', 'Chelsea')
 
 @app.route('/team', methods=['GET'])
-def noise():
+def team():
     team=choice(teams)
     return jsonify(team=team)
