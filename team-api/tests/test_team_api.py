@@ -9,7 +9,10 @@ class TestBase(TestCase):
         return app
 
 class TestView(TestBase):
-    def test_get_team_Noble(self):
-        response = self.client.post(url_for('team'), json={"player":"Noble"})
-        self.assert200(response)
-        self.assertIn(b'West Ham', response.data)
+  
+    def test_get_team(self):
+        with patch ('application.routes.choice') as r:
+            r.return_value = 'West Ham'
+            response = self.client.get(url_for('team'))
+            self.assert200(response)
+            self.assertIn(b'West Ham', response.data)

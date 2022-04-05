@@ -2,7 +2,7 @@ from flask import Flask, Response, request, jsonify
 from application import app
 
 @app.route('/position', methods=["POST"])
-def name():
+def position():
     team=request.get_json()['team']
     player=request.get_json()['player']
 
@@ -16,12 +16,12 @@ def name():
         else: 
             position='invalid'
     elif team == "Arsenal":
-        if player == 'white':
+        if player == 'White':
             position = 'Defender'
         elif player == 'Pepe':
             position = 'Forward'
         elif player == 'Xhaka':
-            position = 'midfielder'
+            position = 'Midfielder'
         else: 
             position='invalid'
     elif team == "Man U":
