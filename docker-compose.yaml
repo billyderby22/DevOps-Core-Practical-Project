@@ -33,6 +33,11 @@ services:
     build: ./team-api
     networks:
       - "football-net"
+  position-api:
+    image: billyderby22/player-gen-position:latest
+    build: ./position-api
+    networks:
+      - "football-net"
   nginx:
     image: nginx:latest
     ports:
