@@ -1,10 +1,10 @@
 from application import app
 from flask import request, jsonify
+from random import choice
 
-teams = dict(Mark Noble='West Ham', Ben White='Arsenal', Marcus Rashford='Man U', Sadio Mane='Liverpool', Ben Chillwell='Chelsea')
+teams = ('West Ham', 'Arsenal', 'Man U', 'Liverpool', 'Chelsea')
 
-@app.route('/team', methods=['POST'])
+@app.route('/team', methods=['GET'])
 def noise():
-    player_json = request.get_json()
-    player = player_json["player"]
-    return jsonify(team=teams[player])
+    team=choice(teams)
+    return jsonify(team=team)
