@@ -1,12 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('Test') {
+        stage('test') {
             steps {
                 sh "bash test.sh"
             }
         }
-        stage('Build and Push') {
+        stage('build and push') {
             environment {
                 DOCKER_CREDS = credentials('docker-creds')
             }
