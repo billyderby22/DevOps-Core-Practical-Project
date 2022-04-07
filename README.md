@@ -16,7 +16,7 @@ When planning this project I started with a risk assessment to identify the haza
 
 ![Risk Assessment](Project%202%20Screen%20shots/risk%20ass.png)
 
-The user will not be submitting information to this app so the main focus of the risk assessment was operational risks. For each hazard a likelihood and impact level were given to help gauge the risks. Aslo control measures and responses where needed were implemented. 
+The user will not be submitting information to this app so the main focus of the risk assessment was operational risks. For each hazard a likelihood and impact level were given to help gauge the risks. Also control measures and responses where needed were implemented. 
 
 ## App Design - 
 For this project I am going to make a random football player generator. The 4 services will communicate together to generate a random player for the user. According to the brief I am working on the concept of MVP (Minimum Viable Product) so that I will complete all requirements before adding additional functionality.  
@@ -85,7 +85,7 @@ Position-api cov -
 
 ![position-api cov](Project%202%20Screen%20shots/Position-api%20cov.png)
 
-If the tests are successful, the build/push stage uses docker-compose to build the images for the different services. It then logs into docker using the credentials configured on the Jenkins VM and then pushes the images to Dockerhub. 
+If the tests are successful, the build/push stage uses docker-compose to build the images for the different services. It then logs into docker using the credentials configured on the Jenkins VM which then pushes the images to Dockerhub. 
 
 Following the build and push stage comes the deploy stage that deploys the application. the docker-compose.yaml and the nginx.conf files are copied to the swarm manager node by secure copy (scp).  
 
