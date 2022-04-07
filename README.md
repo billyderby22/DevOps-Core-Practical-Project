@@ -12,7 +12,6 @@ In this project we were tasked with creating an application consisting of four m
 - NGINX as a reverse proxy
 
 ## Project Planning - 
-
 When planning this project I started with a risk assessment to identify the hazards associated with this project. See below:
 
 ![Risk Assessment](Project%202%20Screen%20shots/Screenshot%202022-03-16%20at%2014.51.14.png)
@@ -33,3 +32,27 @@ Position-api (service 4): this service receives a HTTP POST request from service
 As well as the main services a reverse proxy using NGINX was used. The NGINX service listens to port 80 on the host machine and performs a proxy pass that directs traffic from port 80 on the host to port 5000 on the front-end container. See the front-end in action bellow:
 
 ![Front-end](Project%202%20Screen%20shots/app%20design.png)
+
+The front end displays generated players with every new request made to the page adding a new one. The generated players are stored in a SQL database, see entity diagram below-
+
+![ED](Project%202%20Screen%20shots/ed.png)
+
+The microservice architecture looks like this:
+
+![Architecture](Project%202%20Screen%20shots/architecuture.png)
+
+## CI/CD Pipeline
+This project uses a full CI/CD pipeline to test, build, deploy and maintain the application. The main components of this pipeline are:
+
+- Project tracking
+- Version control
+- Development environment
+- CI server
+- Deployment environment
+
+Project Tracking was done using Jira. I created tasks and assigned them with story points and used MoSCoW prioritisation to sort them. Tasks started in the backlog then moved to complete as I worked through the sprint. See my Jira board bellow - 
+
+![Jira](Project%202%20Screen%20shots/jira.png)
+
+[Jira Board](https://qawilliamderby.atlassian.net/jira/software/projects/DEV/boards/5)
+
