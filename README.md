@@ -87,7 +87,7 @@ Position-api cov -
 
 If the tests are successful, the build/push stage uses docker-compose to build the images for the different services. It then logs into docker using the credentials configured on the Jenkins VM which then pushes the images to Dockerhub. 
 
-Following the build and push stage comes the deploy stage that deploys the application. the docker-compose.yaml and the nginx.conf files are copied to the swarm manager node by secure copy (scp).  
+Following the build and push stage comes the deploy stage that deploys the application. the docker-compose.yaml and the nginx.conf files are copied to the swarm manager node by secure copy (scp). Then the deploy.sh script is executed that deploys the docker-stack and makes 3 replicas of it. 
 
 The results of the pipeline are shown below - 
 
