@@ -82,7 +82,7 @@ Team-api cov -
 ![Team-api cov](Project%202%20Screen%20shots/team-api%20cov.png)
 
 Position-api cov -
- 
+
 ![position-api cov](Project%202%20Screen%20shots/Position-api%20cov.png)
 
 If the tests are successful, the build/push stage uses docker-compose to build the images for the different services. It then logs into docker using the credentials configured on the Jenkins VM and then pushes the images to Dockerhub. 
@@ -90,4 +90,20 @@ If the tests are successful, the build/push stage uses docker-compose to build t
 Following the build and push stage comes the deploy stage that deploys the application. the docker-compose.yaml and the nginx.conf files are copied to the swarm manager node by secure copy (scp).  
 
 The results of the pipeline are shown below - 
+
+![Pipeline](Project%202%20Screen%20shots/Jenkins%20Build.png)
+
+Successful stages appear green, unstable builds are shown by yellow stages and failures are indicated with red stages. If a stage fails later stages will be skipped and that will prevent failed versions from being deployed. 
+
+The structure of the CI/CD pipeline is - 
+
+![CI pipeline diagram](Project%202%20Screen%20shots/CI%20Pipeline.png)
+
+## Known Issues
+
+- Invalid players can show, ideally only valid players would
+- Idealy 100% tests accross the board
+
+## Future Improvements
+In the future I would like to add a way so that only a few players are displayed on the home page, ideally the five newest. Then I would like to add a history tab that allows the user to scroll through all of the past players that were generated. 
 
