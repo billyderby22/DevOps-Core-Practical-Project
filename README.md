@@ -68,16 +68,21 @@ The development environment was a Ubuntu virtual machine hosted on GCP that was 
 
 Jenkins was used as a CI server. Using a github webhook Jenkins cloned down the repo and executed the pipeline script defined in the Jenkinsfile. The pipeline has 4 main stages: test, build/push, deploy and post build actions. The test stage executes a bash script that cycles through the directories of the 4 services and runs unit tests using pytest. The front-end and the other 3 APIs had unit tests written to test all areas of functionality. The test stage was successful showing the following results. 
 
-Front-end cov - 
+
+Front-end cov -
+
 ![Front-end cov](Project%202%20Screen%20shots/Front-end%20cov.png)
 
-Player-api cov - 
+Player-api cov -
+
 ![Player-api cov](Project%202%20Screen%20shots/Player-api%20cov.png)
 
-Team-api cov - 
+Team-api cov -
+
 ![Team-api cov](Project%202%20Screen%20shots/team-api%20cov.png)
 
-Position-api cov - 
+Position-api cov -
+ 
 ![position-api cov](Project%202%20Screen%20shots/Position-api%20cov.png)
 
 If the tests are successful, the build/push stage uses docker-compose to build the images for the different services. It then logs into docker using the credentials configured on the Jenkins VM and then pushes the images to Dockerhub. 
