@@ -95,9 +95,6 @@ The results of the pipeline are shown below -
 
 Successful stages appear green, unstable builds are shown by yellow stages and failures are indicated with red stages. If a stage fails later stages will be skipped and that will prevent failed versions from being deployed. 
 
-The structure of the CI/CD pipeline is - 
-
-![CI pipeline diagram](Project%202%20Screen%20shots/CI%20Pipeline.png)
 
 ## Known Issues
 
